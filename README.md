@@ -1,2 +1,3 @@
-# Simple-responsive-web-page
-Simple responsive web page + fixed header + sticky footer + fullscreen overlay navigation menu(mobile size) 
+Alma Kristiāna Vītola
+
+Programmēšana mani vienmēr ir piesaistījusi, tomēr apguvu citu profesiju un nu esmu sapratusi, ka nevēlos pat nemēģināt apgūt programmēšanu. Iepriekš iegūtā izglītība man ir iemācījusi smagi strādāt un spēt īsā laikā uztvert daudz jaunas informācijas. Es vēlos strādāt šajā jomā un tāpēc meklēju vislabākos avotus tās apgūšanai. Kā jau sacīju pieteikuma epastā es apgūstu front-end valodas Web Development kursā udemy.com. Līdz šim esmu guvusi ieskatu un mācījusies praktiski pielietot HTML, CSS, Javascript, jQuery un Bootstrap 4. Pašlaik vēlos apgūt front end valodas, taču kopējais mērķis būtu strādāt kā full-stack web izstrādātāja.
