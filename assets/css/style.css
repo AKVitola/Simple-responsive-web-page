@@ -129,6 +129,7 @@ figcaption {
 }
 .zoom:hover {
   transform: scale(1.15);
+  transition: .3s;
 }
 #contact{
   width: 100%;
