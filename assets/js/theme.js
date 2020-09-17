@@ -34,10 +34,9 @@ function scrollToTarget(e) {
 
     const href = this.getAttribute("href");
     let targetDiv = document.querySelector(href);
-
     let targetPosition = calculateTargetPos(targetDiv, 70);
-    scrollToLocation(targetPosition);
 
+    scrollToLocation(targetPosition);
     startPageScrolling();
 }
 
@@ -52,29 +51,23 @@ function displayGoToTopButton() {
         goToTopButton.style.display = "none";
     }
 }
+function calculateTargetPos(target, offset = 0) {
+  let targetDivTopPos = target.getBoundingClientRect().top;
+  let windowOffset = window.pageYOffset;
+  let position = targetDivTopPos + windowOffset - offset;
+
+  return position;
+}
+function scrollToLocation(targetPosition) {
+  window.scrollTo({
+    top: targetPosition,
+    behavior: "smooth",
+  });
+}
 function goToTop() {
     let targetDiv = document.querySelector("#home");
-
     let targetPosition = calculateTargetPos(targetDiv, 70);
     scrollToLocation(targetPosition);
-}
-
-function calculateTargetPos(target, offset = 0) {
-    let targetDivTopPos = target.getBoundingClientRect().top;
-    let windowOffset = window.pageYOffset;
-
-    let position = targetDivTopPos + windowOffset - offset;
-    console.log('targetDivTopPos + windowOffset - offset = position');
-    console.log(targetDivTopPos + " + " + windowOffset + " - " + offset + " = " + position);
-
-    return position;
-}
-
-function scrollToLocation(targetPosition) {
-    window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
-    });
 }
 
 function stopPageScrolling() {
