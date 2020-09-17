@@ -64,6 +64,8 @@ function calculateTargetPos(target, offset = 0) {
     let windowOffset = window.pageYOffset;
 
     let position = targetDivTopPos + windowOffset - offset;
+    console.log('targetDivTopPos + windowOffset - offset = position');
+    console.log(targetDivTopPos + " + " + windowOffset + " - " + offset + " = " + position);
 
     return position;
 }
