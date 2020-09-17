@@ -10,7 +10,7 @@ function openMenu() {
 
 let liElements = document.getElementById("main_nav").getElementsByTagName("li");
 for (let i = 0; i < liElements.length; i++) {
-    liElements[i].addEventListener('click', closeMenuOnSelect);
+    liElements[i].addEventListener("click", closeMenuOnSelect);
     liElements[i].addEventListener("click", function setActiveMenuItem() {
         for (let j = 0; j < liElements.length; j++) {
             liElements[j].classList.remove("active");
@@ -27,19 +27,24 @@ function closeMenuOnSelect() {
 
 const links = document.querySelectorAll("#main_nav ul a");
 for (const link of links) {
-    link.addEventListener("click", smoothScroll);
+    link.addEventListener("click", scrollToTarget);
 }
-function smoothScroll(e) {
+function scrollToTarget(e) {
     e.preventDefault();
+
     const href = this.getAttribute("href");
-    document.querySelector(href).scrollIntoView({
-        behavior: "smooth"
-    });
+    let targetDiv = document.querySelector(href);
+
+    let targetPosition = calculateTargetPos(targetDiv, 70);
+    scrollToLocation(targetPosition);
+
     startPageScrolling();
 }
 
 goToTopButton = document.getElementById("goToTopButton");
-window.onscroll = function () { displayGoToTopButton() };
+window.onscroll = function () {
+    displayGoToTopButton();
+};
 function displayGoToTopButton() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         goToTopButton.style.display = "block";
@@ -48,8 +53,25 @@ function displayGoToTopButton() {
     }
 }
 function goToTop() {
-    document.querySelector("#home").scrollIntoView({
-        behavior: "smooth"
+    let targetDiv = document.querySelector("#home");
+
+    let targetPosition = calculateTargetPos(targetDiv, 70);
+    scrollToLocation(targetPosition);
+}
+
+function calculateTargetPos(target, offset = 0) {
+    let targetDivTopPos = target.getBoundingClientRect().top;
+    let windowOffset = window.pageYOffset;
+
+    let position = targetDivTopPos + windowOffset - offset;
+
+    return position;
+}
+
+function scrollToLocation(targetPosition) {
+    window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
     });
 }
 
@@ -67,12 +89,9 @@ function toggleMenu() {
         openMenu();
         stopPageScrolling();
         hideButtonInOverlayMenu();
-    } else{
+    } else {
         closeMenu();
         startPageScrolling();
         displayGoToTopButton();
     }
 }
-
-
-
