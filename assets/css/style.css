@@ -104,28 +104,22 @@ nav li {
   flex: 1 1 0px;
 }
 img {
-  max-width: 100%;
+  max-width: 400px;
+  width: 100%;
   height: auto;
+  border: double #00989c 10px;
 }
 .two img {
   display: block;
   margin-left: auto;
   margin-right: auto; 
 }
-.two #pictureToRight {
-  padding-left: 20px;
-}
-.two #pictureToLeft {
-  padding-right: 20px;
-}
-figure img {
-  padding-bottom: 5px;
-}
 figcaption {
   font-family: "PierSans";
   font-size: 10px;
   font-style: italic;
   text-align: center;
+  padding-top: 5px;
 }
 .zoom:hover {
   transform: scale(1.15);
@@ -263,15 +257,12 @@ iframe {
   .reverse {
     flex-direction: column-reverse;
   }
-  .two #pictureToRight, .two #pictureToLeft {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
   img {
-    padding-bottom: 10px;
+    max-width: 100%;
+    height: auto;
   }
   figure {
-    margin: 20px 0px;
+    margin: 10px 0px;
   }
   .zoom:hover {
     transform: scale(1);
@@ -297,6 +288,12 @@ iframe {
   iframe {
     width: 500px;
     height: 400px;
+  }
+  .two #pictureToRight {
+    padding-left: 10px;
+  }
+  .two #pictureToLeft {
+    padding-right: 10px;
   }
 }
 @media only screen and (min-width: 768px) {
