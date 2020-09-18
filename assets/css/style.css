@@ -272,7 +272,7 @@ iframe {
     height: 300px;
   }
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (max-width: 767px) {
   body, #header {
     width: 600px;
   }
@@ -282,26 +282,45 @@ iframe {
   nav ul {
     white-space:nowrap;
   }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
   figure {
-    margin: 10px;
+    margin: 7px;
   }
   iframe {
     width: 500px;
     height: 400px;
   }
-  .two #pictureToRight {
-    padding-left: 10px;
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: space-around;
   }
-  .two #pictureToLeft {
-    padding-right: 10px;
+  #gallery .flex-container {
+    flex-direction: row;
+  }
+  .flex-container div {
+    flex: 1 1 0px;
+  }
+  .reverse {
+    flex-direction: column-reverse;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   body, #header {
     width: 768px;
   }
   figure {
     margin: 13px;
+  }
+    .two #pictureToRight {
+    padding-left: 20px;
+  }
+  .two #pictureToLeft {
+    padding-right: 20px;
   }
 }  
 @media only screen and (min-width: 992px) {
