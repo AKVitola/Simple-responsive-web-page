@@ -78,6 +78,7 @@ nav li {
 #main {
   min-height: 600px;
   width: 100%;
+  position: relative;
   background-color:#dddddd;
   letter-spacing: 1px;
   font-family: "PierSans";
@@ -143,23 +144,23 @@ iframe {
 .inline {
   display: inline-block;
 }
+#topButtonContainer {
+  position: absolute;
+  right: 25px;
+}
 #goToTopButton {
   display: none; 
   position: fixed; 
   bottom: 55px; 
-  right: 60px; 
   z-index: 1; 
   border: none;
   outline: none;
-  background-color: #aaaaaacc;
-  color: 	#eeeeee;
+  background-color: transparent;
+  color: 	#c7711a;
   cursor: pointer;
-  padding: 6px;
-  border-radius: 10px;
-  font-size: 18px;
+  font-size: 35px;
 }
 #goToTopButton:hover {
-  background-color: 	#eeeeee;
   color: #00989c;
 }
 #footer {
@@ -271,6 +272,9 @@ iframe {
     width: 400px;
     height: 300px;
   }
+  #topButtonContainer {
+    right: 22px;
+  }
 }
 @media only screen and (min-width: 600px) and (max-width: 767px) {
   body, #header {
@@ -323,7 +327,7 @@ iframe {
     padding-right: 20px;
   }
 }  
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   body, #header {
     width: 992px;
   }
